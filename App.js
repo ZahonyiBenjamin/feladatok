@@ -26,6 +26,8 @@ export default function App() {
       },
     ]
    
+    
+
     storeData(feladatok)*/
     getData().then(adat => {
       //alert(JSON.stringify(adat))
@@ -61,6 +63,8 @@ export default function App() {
       "datum":datum,
       "kesz":0
     }) 
+
+    uj.sort((a, b) => new Date(a.datum) - new Date(b.datum))
 
     setAdatok(uj)
     storeData(uj)
@@ -107,7 +111,7 @@ export default function App() {
     setShow(false);
     setDate(datum);
     //setDatum(datum.toLocaleString().split(',')[0])
-    setDatum(datum.getFullYear() + "." + (datum.getMonth() + 1) + "." + datum.getDate() + ".")
+    setDatum(datum.getFullYear() + "-" + (datum.getMonth() + 1) + "-" + datum.getDate())
   };
 
   const showMode = () => {
